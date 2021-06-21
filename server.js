@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser')
 
 //bring routes
 const routeBlog = require('./routes/blog')
+const routeSignup = require('./routes/auth')
 
 //app
 const app = express()
@@ -19,6 +20,7 @@ app.use(cookieParser())
 
 //routes middelwares
 app.use(process.env.API, routeBlog)
+app.use(process.env.API, routeSignup)
 
 //cors 
 if (process.env.NODE_ENV == 'dev') {
